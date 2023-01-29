@@ -15,7 +15,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn package'
+                sh 'mvn clean package'
             }
             
             post {
@@ -27,12 +27,12 @@ pipeline {
         
     stage('Unit Test'){
         steps {
-            sh 'mvn test'
+            sh 'mvn clean test'
         }
     }
     stage('Integration Test'){
         steps {
-          sh 'mvn verify -DskipUnitTests'
+          sh 'mvn clean verify -DskipUnitTests'
         }
     }
     stage ('Checkstyle Code Analysis'){
