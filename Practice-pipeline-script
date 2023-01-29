@@ -47,6 +47,40 @@ pipeline {
         
     }
     
+    stage ('SonarQube scan'){
+        steps {
+            
+            withSonarQubeEnv('SonarQube') {
+            sh '''
+            mvn sonar:sonar \
+           -Dsonar.projectKey=JavaWebApp \
+           -Dsonar.host.url=http://172.31.25.65:9000 \
+           -Dsonar.login=1a968db999c2181d0092538962415430ec15f632
+            
+            '''
+        }
+        
+    }
     
+    }
+    
+    stage ('Quality Gate'){
+        steps {
+            
+         waitForQualityGate abortPipeline: true
+    
+      }
+    
+    }
+    
+    stage ('Upload artifact to Nexus'){
+        steps {
+            
+         sh 'mvn clean deploy -DskipTests'
+    
+      }
+    
+    }
+
     }
 }
