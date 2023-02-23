@@ -1,3 +1,8 @@
+def COLOR_MAP = [
+    'SUCCESS': 'good',
+    'FAILURE': 'danger',
+]
+
 pipeline {
     agent any
 
@@ -92,8 +97,6 @@ pipeline {
     
     }
     
-    
-     
     stage('Deploy to DEV') {
       environment {
         HOSTS = "dev"
@@ -133,11 +136,17 @@ pipeline {
         sh 'ls'
         sh "ansible-playbook ${WORKSPACE}/deploy.yaml --extra-vars \"hosts=$HOSTS workspace_path=$WORKSPACE\""
       }
-      
      }
      
+    }
     
-    
-    }  
-    
+    post {
+    always {
+        echo 'Slack Notifications.'
+        slackSend channel: '#team-devops', //update and provide your channel name
+        color: COLOR_MAP[currentBuild.currentResult],
+        message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL} - nelrooooo"
+    }
+  }
+  
 }
