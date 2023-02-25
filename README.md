@@ -184,3 +184,4 @@
     - Install all plugings without restart  
 18) Confirm and make test your installations/setups  
 19) Remember to integrate a webhook with the entire setup
+20) Interesting CICD automation process
