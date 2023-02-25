@@ -182,5 +182,5 @@
         - Maven Release Plug-In
         - Slack Notification
     - Install all plugings without restart 
-
+        -remember to integrate a webhook with the entire setup
 18) Confirm and make test your installations/setups  
