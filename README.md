@@ -186,4 +186,3 @@
 19) Remember to integrate a webhook with the entire setup
 20) Interesting CICD automation process
 21) Interesting CICD automation process
-22) Interesting CICD automation process
