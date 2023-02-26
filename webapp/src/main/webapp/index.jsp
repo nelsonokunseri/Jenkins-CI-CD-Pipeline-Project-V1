@@ -7,21 +7,21 @@
 <style>
 /* Header/logo Title */
 .header {
-  padding: 80px;
+  padding: 90px;
   text-align: center;
-  background: #cc590d;
+  background: #055615;
   color: white;
 }
 /* Increase the font size of the heading */
 .header h1 {
-  font-size: 50px;
+  font-size: 60px;
 }
 </style>
 </head>
 <body>
 <div class="header">
-  <h1>I m a professional DevOps Engineer !!!</h1>
-  <p>This Java Web Application Was Deployed Using CI/CD PIPELINE created by Nelroo</p>
+  <h1>.....OBI....ALL THE WAY....They said he doesn't have a structure...The People are the STRUCTURE....Freedom has come for NIGERIA !!!</h1>
+  <p>This Java Web Application Was Deployed Using CI/CD pipeline created by NELROOOOO</p>
 </div>
 </body>
 </html>
